@@ -1,0 +1,112 @@
+/* --- Загальні стилі для всієї сторінки --- */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    /* Ось тут зміни: замість одного кольору - градієнт */
+    background: linear-gradient(135deg, #ece9e6, #ffffff);
+    color: #333;
+}
+
+/* --- Стилі для контейнера конвертера --- */
+.converter-container {
+    background-color: #ffffff; /* Білий фон для "картки" */
+    padding: 30px 40px; /* Внутрішні відступи (30px зверху/знизу, 40px зліва/справа) */
+    border-radius: 12px; /* Округлені кути */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Легка тінь */
+    width: 100%;
+    max-width: 450px; /* Максимальна ширина контейнера */
+    text-align: center; /* Центруємо текст всередині */
+}
+
+/* --- Стилі для заголовків --- */
+h1 {
+    font-size: 24px;
+    margin-bottom: 25px;
+    color: #1c1e21;
+}
+
+h2 {
+    font-size: 18px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #606770;
+}
+
+/* --- Стилі для поля вводу --- */
+#numberInput {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    box-sizing: border-box; /* Враховуємо padding та border у загальну ширину */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* --- Стилі для кнопки --- */
+#convertBtn {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #1877f2; /* Синій колір, як у Facebook */
+    border: none;
+    border-radius: 6px;
+    cursor: pointer; /* Змінюємо курсор на "руку" при наведенні */
+    transition: background-color 0.2s; /* Плавна зміна кольору */
+}
+
+/* --- Ефект при наведенні на кнопку --- */
+#convertBtn:hover {
+    background-color: #166fe5; /* Трохи темніший синій */
+}
+
+/* --- Стилі для тексту з результатом --- */
+#resultText {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1c1e21;
+    min-height: 25px; /* Резервуємо місце, щоб контейнер не "стрибав" */
+    word-wrap: break-word; /* Переносимо довгі слова */
+}
+/* --- Стилі для контейнера з результатом --- */
+.result-container {
+    display: flex; /* Розміщуємо елементи в один рядок */
+    align-items: center; /* Вирівнюємо їх по центру по вертикалі */
+    gap: 10px; /* Додаємо невеликий проміжок між текстом і кнопкою */
+    border: 1px solid #dddfe2;
+    border-radius: 6px;
+    padding: 5px 15px;
+}
+
+#resultText {
+    flex-grow: 1; /* Дозволяємо тексту зайняти весь доступний простір */
+    margin: 0; /* Прибираємо стандартні відступи параграфа */
+    min-height: 40px; /* Висота, щоб контейнер не стрибав */
+    display: flex;
+    align-items: center;
+    text-align: left; /* Вирівнюємо текст результату по лівому краю */
+}
+
+/* --- Стилі для кнопки копіювання --- */
+#copyBtn {
+    /* Скидаємо стилі від головної кнопки */
+    width: auto;
+    padding: 8px 12px;
+    font-size: 18px;
+    background-color: #e4e6eb; /* Світло-сірий фон */
+    color: #333;
+    font-weight: normal;
+    flex-shrink: 0; /* Забороняємо кнопці стискатися */
+    border: none;
+}
+
+#copyBtn:hover {
+    background-color: #d8dbdf; /* Трохи темніший сірий при наведенні */
+}
