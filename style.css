@@ -14,7 +14,7 @@ body {
 /* --- Стилі для контейнера конвертера --- */
 .converter-container {
     background-color: #ffffff; /* Білий фон для "картки" */
-    padding: 30px 40px; /* Внутрішні відступи (30px зверху/знизу, 40px зліва/справа) */
+    padding: 30px 40px; 
     border-radius: 12px; /* Округлені кути */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Легка тінь */
     width: 100%;
@@ -60,6 +60,8 @@ h2 {
     border-radius: 6px;
     cursor: pointer; /* Змінюємо курсор на "руку" при наведенні */
     transition: background-color 0.2s; /* Плавна зміна кольору */
+    transform: scale(1); /*Початковий масштаб */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /*Початкова тінь */
 }
 
 /* --- Ефект при наведенні на кнопку --- */
@@ -110,3 +112,11 @@ h2 {
 #copyBtn:hover {
     background-color: #d8dbdf; /* Трохи темніший сірий при наведенні */
 }
+
+#convertBtn:hover {
+background-color: #166fe5; / Трохи темніший синій /
+transform: scale(1.05); / Збільшуємо масштаб на 5% /
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); / Робимо тінь більшою /
+transition: background-color 0.2s, transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out; / Анімуємо всі три властивості */
+}
+

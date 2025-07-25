@@ -99,13 +99,10 @@ function numberToCurrency(number) {
     // Правильно відмінюємо слово "гривня"
     const hryvniaNoun = getNounPluralForm(hryvnias, currencyNouns.hryvnia);
 
-    // --- Обробка копійок ---
-    // Форматуємо копійки, щоб завжди було 2 цифри (напр. 5 -> "05")
+    // --- Обробка копійок --
     const kopiykyAsString = String(kopiyky).padStart(2, '0');
-    // Правильно відмінюємо слово "копійка"
     const kopiykaNoun = getNounPluralForm(kopiyky, currencyNouns.kopiyka);
     
-    // Збираємо фінальний результат
     return `${hryvniasAsWords} ${hryvniaNoun} ${kopiykyAsString} ${kopiykaNoun}`;
 }
 
@@ -115,37 +112,33 @@ const convertBtn = document.getElementById('convertBtn');
 const resultText = document.getElementById('resultText');
 
 convertBtn.addEventListener('click', () => {
-    // Використовуємо parseFloat для читання дробових чисел
+    //  parseFloat для дробів
     const number = parseFloat(numberInput.value);
     
-    // Викликаємо нашу нову головну функцію
     const textResult = numberToCurrency(number);
     resultText.textContent = textResult;
 });
-// --- 6. Логіка для кнопки копіювання ---
 
-// Знаходимо нову кнопку
 const copyBtn = document.getElementById('copyBtn');
 
 copyBtn.addEventListener('click', () => {
-    // Отримуємо текст з поля результату
+
     const textToCopy = resultText.textContent;
 
-    // Якщо там є текст для копіювання
+ 
     if (textToCopy) {
-        // Використовуємо Clipboard API для копіювання
+        
         navigator.clipboard.writeText(textToCopy)
             .then(() => {
-                // Успіх! Даємо користувачу зворотний зв'язок
+                
                 const originalIcon = copyBtn.textContent;
-                copyBtn.textContent = '✅'; // Змінюємо іконку на галочку
-                // Повертаємо стару іконку через 1.5 секунди
+                copyBtn.textContent = '✅';
+                
                 setTimeout(() => {
                     copyBtn.textContent = originalIcon;
                 }, 1500);
             })
             .catch(err => {
-                // Обробка можливої помилки
                 console.error('Не вдалося скопіювати текст: ', err);
             });
     }
